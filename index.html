@@ -11,6 +11,7 @@
     <meta property="og:description" content="Welcome to our wedding">
     <meta property="og:image" content="">
     <style>
+        
         * {
             margin: 0;
             padding: 0;
@@ -22,6 +23,29 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
             background: #f8f8f8;
         }
+        /* 重置全局滚动，微信完美兼容 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  /* 移除100vh，改用auto高度，允许自然延伸 */
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden; /* 只禁止横向滑动，保留纵向滚动 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* 开启苹果微信丝滑惯性滚动 */
+  touch-action: pan-y; /* 仅允许纵向滑动 */
+}
+
+/* 单页邀请函容器修正 */
+.invite-page {
+  width: 100%;
+  min-height: 100vh;
+  height: auto; /* 高度自适应内容，内容多自动撑开 */
+}
         /* 主容器，和原图比例一致 */
         .wedding-card {
             width: 100vw;
