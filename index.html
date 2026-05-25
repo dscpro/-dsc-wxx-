@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>董士程&王鑫欣 · 婚礼邀请函</title>
+    <meta property="og:title" content="董士程 & 王鑫欣 婚礼邀请函">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <meta property="og:description" content="Welcome to our wedding">
+    <meta property="og:image" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+            background: #f8f8f8;
+        }
+        /* 主容器，和原图比例一致 */
+        .wedding-card {
+            width: 100vw;
+            max-width: 420px;
+            height: 100vh;
+            max-height: 750px;
+            margin: 0 auto;
+            position: relative;
+            background: url('./images/1.jpg') center center / cover no-repeat;
+            /* 👇 这里放你的婚纱照背景图链接，先留空 */
+            background-color: #cce0f5;
+            overflow: hidden;
+        }
+        /* 半透明渐变遮罩，让文字更清晰 */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.05) 0%,
+                rgba(0,0,0,0.1) 100%
+            );
+        }
+        /* 左上角手写体装饰 */
+        .corner-deco {
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            color: #fff;
+            opacity: 0.9;
+            font-family: 'Segoe Script', 'Edwardian Script ITC', cursive;
+            font-size: 30px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 2px rgba(255,255,255,0.7);
+        }
+        .corner-deco .flower {
+            font-size: 22px;
+            margin-bottom: 3px;
+        }
+
+       
+        /* 主标题文字 */
+        .main-title {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            color: #fff;
+            font-size: 72px;
+            font-family: "KaiTi", "STKaiti", cursive;
+            line-height: 1.1;
+            text-align: right;
+        }
+        .main-title .gold {
+            color: #ffd77a;
+        }
+        /* 英文副标题 */
+        .sub-title {
+            position: absolute;
+            top: 140px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            text-align: center;
+            opacity: 0.9;
+        }
+        .sub-title .welcome,
+        .sub-title .to-wedding {
+            font-family: 'Dancing Script', 'Brush Script MT', cursive;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 2px rgba(255,255,255,0.6);
+        }
+        .sub-title .welcome {
+            font-size: 20px;
+        }
+        .sub-title .to-wedding {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        /* 底部新人信息 */
+        .couple-info {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+        .couple-info .label {
+            font-size: 18px;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+        .couple-info .names {
+            font-size: 24px;
+            letter-spacing: 4px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .couple-info .divider {
+            margin: 10px;
+        }
+
+        /* 中文手写体 */
+        .chinese-text {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            color: #fff;
+            font-family: "STKaiti", "KaiTi", cursive;
+            font-size: 72px;
+            line-height: 1.1;
+            text-align: right;
+            /* 模拟白色毛笔字的毛边质感 */
+            text-shadow: 0 0 2px rgba(255,255,255,0.8);
+        }
+        /* 金色英文花体 */
+        .english-text {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            color: #ffd77a;
+            font-family: 'Dancing Script', cursive;
+            font-size: 48px;
+            font-weight: 700;
+            /* 让英文叠加在中文上 */
+            pointer-events: none;
+        }
+         .art-font{
+        position:absolute;
+        top:12%;
+        right:8%;
+        text-align:right;
+        color:#ffffff;
+        font-family:"KaiTi","STKaiti","SimSun",serif;
+        font-size:42px;
+        font-weight:100;
+        line-height:1.5;
+        letter-spacing:2px;
+
+        /* 纤细 + 柔和质感 */
+        text-shadow: 
+          0 0 1px rgba(255,255,255,0.8),
+          0 0 3px rgba(255,255,255,0.4);
+      }
+      .couple-info .names {
+        font-size: 26px;
+        letter-spacing: 6px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        font-family: "STKaiti", "KaiTi", cursive;
+        font-weight: 300;
+        /* 模拟手写毛边质感 */
+        text-shadow: 
+            0 0 1px rgba(255,255,255,0.9),
+            0 0 3px rgba(255,255,255,0.5);
+    }
+    /* 右下角音乐按钮 */
+    .music-btn{
+        position:absolute;
+        bottom:40px;
+        right:25px;
+        width:38px;
+        height:38px;
+        border-radius:50%;
+        background:rgba(255,255,255,0.22);
+        backdrop-filter:blur(6px);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        z-index:999;
+        cursor:pointer;
+        animation:musicRotate 3s linear infinite paused;
+    }
+    .music-btn.playing{
+        animation-play-state:running;
+    }
+    @keyframes musicRotate{
+        0%{transform:rotate(0deg);}
+        100%{transform:rotate(360deg);}
+    }
+    /* 第二页整体容器 */
+    .invite-page-2 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 750px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb;
+        overflow: hidden;
+    }
+    .bg-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('') center center / cover no-repeat;
+        opacity: 0.15;
+    }
+
+    /* 顶部大字母装饰 */
+    .top-letter {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 80%;
+        text-align: center;
+        opacity: 0.08;
+        font-size: 68px;
+        font-weight: 100;
+        letter-spacing: 10px;
+        pointer-events: none;
+    }
+
+    /* 文案内容 */
+    .text-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        text-align: center;
+        color: #333;
+        line-height: 1.8;
+    }
+    .text-content .title {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    font-family: "KaiTi", "STKaiti", "SimSun", serif;
+    }
+    .text-content .poem p {
+        font-size: 18px;
+        margin: 12px 0;
+        font-weight: 300;
+        letter-spacing: 1px;
+        font-family: "KaiTi", "STKaiti", "SimSun", serif;
+    }
+
+    /* 底部装饰文字 */
+    .footer-decor {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+        font-size: 14px;
+        color: #666;
+        opacity: 0.7;
+        letter-spacing: 2px;
+    }
+    /* 第三页整体容器 */
+    .invite-page-3 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 300px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 胶片黑边容器（上下黑条） */
+    .film-frame {
+        width: 100%;
+        background: #000;
+        /* 上下黑边 + 中间图片区域 */
+        padding: 4% 0;
+        overflow: hidden;
+    }
+
+    /* 轮播容器 */
+    .slideshow {
+        display: flex;
+        transition: transform 1.2s ease-out;
+    }
+
+    /* 轮播图片 */
+    .slide {
+        min-width: 100%;
+        height: 0;
+        /* 控制图片宽高比，16:9 */
+        padding-bottom: 56.25%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* 底部英文文案 */
+    .film-caption {
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        right: 5%;
+        color: #ddd;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 1px;
+        font-family: 'Georgia', serif;
+        text-shadow: 0 0 4px rgba(0,0,0,0.8);
+    }
+    .slideshow {
+      transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.3, 1);
+    }
+    /* 第四页整体容器 */
+    .invite-page-4 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 500px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 6px;
+        box-sizing: border-box;
+    }
+
+    /* 顶部英文感谢语 - 斜体艺术字 */
+    .top-quote {
+        text-align: center;
+        color: #888;
+        font-size: 15px;
+        line-height: 1.6;
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-style: italic;
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+        opacity: 0.85;
+    }
+
+    /* 标题区域 */
+    .title-block {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .title-block .subtitle {
+        color: #aaa;
+        font-size: 22px;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+    .title-block .subtitle {
+        font-size: 46px;
+        font-weight: 400;
+        color: #333;
+        letter-spacing: 4px;
+        margin: 0;
+        /* 艺术字效果 */
+        font-family: "KaiTi", "STKaiti", "SimSun", serif;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* 三列照片区 */
+    .photo-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 6px;
+        margin-bottom: 30px;
+    }
+    .photo-col {
+        background-size: cover;
+        background-position: center;
+    }
+    .photo-left, .photo-right {
+        width: 30%;
+        aspect-ratio: 3 / 4;
+    }
+    .photo-center {
+        width: 38%;
+        aspect-ratio: 3 / 4;
+    }
+
+   /* 第五页整体容器 */
+    .invite-page-5 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 600px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 8px;
+        box-sizing: border-box;
+    }
+
+    /* 顶部邀约文案 */
+    .top-invite {
+        text-align: center;
+        color: #333;
+        font-size: 20px;
+        line-height: 2;
+        font-family: "KaiTi", "STKaiti", serif;
+        margin-bottom: 50px;
+    }
+
+    /* 主标题区 */
+    .main-title-area {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .main-line-1, .main-line-2 {
+    font-size: 42px;
+    color: #222;
+    letter-spacing: 3px;
+    margin: 0;
+    /* 手写艺术字 */
+    font-family: "Ma Shan Zheng", "ZCOOL KuaiLe", cursive;
+    opacity: 0.9;
+    }
+    .main-line-1 {
+        margin-bottom: 10px;
+    }
+    .sub-title-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .en-line {
+        color: #888;
+        font-size: 16px;
+        font-style: italic;
+        font-family: 'Georgia', serif;
+        line-height: 1.4;
+    }
+    .main-line-2 {
+        font-size: 42px;
+        font-weight: 400;
+        color: #222;
+        letter-spacing: 3px;
+        margin: 0;
+    }
+
+   
+    /* 底部卡片 - 参考图同款窄版 */
+    .invite-card {
+        width: 100%;
+        background: #f8f6f3;
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        box-sizing: border-box;
+        gap: 16px;
+    }
+
+    .card-photo {
+        width: 32%;
+        aspect-ratio: 4.8 / 5; /* 调整为更接近参考图的竖版比例 */
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
+    }
+
+    .card-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .cn-text {
+            margin: 0 0 12px;
+            font-style: italic;
+            letter-spacing: 1px;
+            color: #333;
+            font-size: 16px;
+            line-height: 2;
+            font-family: "KaiTi", "STKaiti", serif;
+        }   
+
+    .en-text {
+        font-size: 12px;
+        line-height: 1.4;
+        color: #888;
+        font-family: 'Georgia', serif;
+        font-style: italic;
+    }
+
+        /* 第六页整体容器 */
+    .invite-page-6 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 620px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    /* 双图拼接区 */
+    .double-photo-area {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 顶部图片 */
+    .photo-top {
+        width: 100%;
+        height: 50%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* 底部图片 */
+    .photo-bottom {
+        width: 100%;
+        height: 50%;
+        position: relative;
+    }
+    .photo-bg {
+        width: 100%;
+        height: 100%;
+        margin-top: 2px ;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* 图片上的英文 */
+    .photo-words {
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5%;
+        box-sizing: border-box;
+    }
+    .photo-words span {
+        color: #fff;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-family: 'Georgia', serif;
+        text-shadow: 0 0 4px rgba(0,0,0,0.6);
+    }
+
+    /* 底部文案区 */
+    .quote-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 6%;
+    }
+    .quote-area p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+        margin: 0;
+        font-family: "KaiTi", "STKaiti", serif;
+    }
+    
+    /* 第七页整体容器（和前几页保持完全一致） */
+    .invite-page-7 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 720px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb; /* 统一背景色 */
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 30px 20px;
+    }
+
+    /* 错位双图容器 */
+    .photo-area1 {
+        position: relative;
+        width: 100%;
+        height: 380px;
+        margin-bottom: 30px;
+    }
+
+    /* 左侧图片：偏上 */
+    .photo-left1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 45%;
+        height: 320px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* 右侧图片：偏下，与左侧形成高低差 */
+    .photo-right1 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 53%;
+        height: 320px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* 底部文案区（和前几页字体/排版统一） */
+    .text-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 5%;
+    }
+    .divider {
+        font-size: 22px;
+        color: #888;
+        margin: 0 0 10px;
+    }
+    .cn-line {
+        font-size: 22px;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        font-family: "KaiTi", "STKaiti", serif; /* 和前几页统一的衬线字体 */
+    }
+    .cn-line.highlight {
+        font-size: 26px;
+        margin: 5px 0 15px;
+    }
+    .en-line {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #888;
+        font-family: 'Georgia', serif; /* 和前几页统一的英文斜体 */
+        font-style: italic;
+        margin: 0;
+    }
+
+    /* 第八页整体容器（和前几页保持完全一致） */
+    .invite-page-8 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 580px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb; /* 统一背景色 */
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    /* 顶部图片区 - 关键修改：contain 让图片完整显示 */
+    .full-photo-area {
+        width: 100%;
+        height: 60%;
+        background-color: #f0eeeb; /* 和页面背景一致，避免留白突兀 */
+    }
+    .photo-main {
+        width: 100%;
+        height: 100%;
+
+        background-size: contain; /* 改为 contain，图片完整显示 */
+        background-position: center;
+        background-repeat: no-repeat; /* 禁止重复平铺 */
+    }
+
+    /* 底部文案区（和前几页字体/排版完全统一） */
+    .text-area {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10%;
+        position: relative;
+    }
+    .cn-text {
+        text-align: center;
+        margin-right: 20px;
+    }
+    .line1 {
+        font-size: 22px;
+        color: #222;
+        margin: 0 0 10px;
+        font-family: "KaiTi", "STKaiti", serif;
+    }
+    .line2 {
+        font-size: 22px;
+        color: #222;
+        margin: 0;
+        font-family: "KaiTi", "STKaiti", serif;
+    }
+    .en-text {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #888;
+        font-family: 'Georgia', serif;
+        font-style: italic;
+        margin: 0;
+    }
+    /* 第九页整体容器（与前几页风格统一） */
+    .invite-page-9 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 850px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    /* 1. 左侧竖排名字（不遮挡顶部大图） */
+    .names-vertical {
+        position: absolute;
+        left: 25px;
+        top: 10%;
+        writing-mode: vertical-rl;
+        font-size: 20px;
+        color: #333;
+        font-family: "KaiTi", "STKaiti", serif;
+        z-index: 1;
+    }
+
+    /* 2. 顶部大图（名字在图外，无遮挡） */
+    .photo-top2 {
+        width: 85%;
+        height: 35%;
+        background-size: cover;
+        background-position: center;
+        margin-left: auto; /* 靠右显示，给左侧名字留出位置 */
+        margin-bottom: 15px;
+    }
+
+    /* 3. 英文文案 */
+    .en-text {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .en-text p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #888;
+        font-family: 'Georgia', serif;
+        font-style: italic;
+        margin: 0;
+    }
+
+    /* 4. 底部错位双图区 */
+    .photo-bottom2 {
+        width: 100%;
+        height: 35%;
+        position: relative;
+    }
+    .photo-left2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 48%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    .photo-right2 {
+        position: absolute;
+        right: 0;
+        top: 15px; /* 向下错位，和左侧图形成高低差 */
+        width: 48%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* 5. 底部手写文案（浮于图片上方，左下角） */
+    .handwriting-text {
+        font-size: 22px;
+        color: #222;
+        margin: 0;
+        font-family: "KaiTi", "STKaiti", serif;
+        
+    }
+    .handwriting-text p {
+        margin: 5px 0;
+    }
+    /* 第十页整体容器（与前几页风格统一） */
+    .invite-page-10 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 750px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 30px 20px;
+    }
+
+    /* 顶部标题 */
+    .header-title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .header-title .heart {
+        color: #d48a6a;
+        font-size: 20px;
+        display: block;
+        margin-bottom: 8px;
+    }
+    .header-title h1 {
+        font-size: 36px;
+        color: #999;
+        font-family: 'Georgia', serif;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    /* 弧形文字容器 + 椭圆图片 */
+    .calendar-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        height: 500px;
+    }
+
+    /* 弧形英文文字 */
+    .arc-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        color: #a83232;
+        font-size: 16px;
+        font-family: 'Georgia', serif;
+        letter-spacing: 2px;
+        text-align: center;
+        /* 弧形效果核心 */
+        transform-origin: center top;
+    }
+    .arc-text span {
+        display: inline-block;
+    }
+
+    /* 椭圆图片容器 */
+    .calendar-oval {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50% / 30% 30% 30% 30%; /* 椭圆效果 */
+        overflow: hidden;
+    }
+    .bg-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 日历半透明遮罩层 */
+    .calendar-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 180, 120, 0.35);
+        color: #fff;
+        padding: 40px 20px 20px;
+        box-sizing: border-box;
+    }
+
+    /* 日期头部 */
+    .date-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .date-header .day {
+        font-size: 52px;
+        font-weight: 300;
+    }
+    .date-header .divider1 {
+        font-size: 38px;
+         
+    }
+    .date-header .year {
+        font-size: 28px;
+        opacity: 0.9;
+    }
+
+    /* 日历表格 */
+    .calendar-grid .weekdays,
+    .calendar-grid .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        text-align: center;
+        gap: 8px;
+    }
+    .calendar-grid .weekdays {
+        margin-bottom: 12px;
+        font-size: 18px;
+        opacity: 0.9;
+    }
+    .calendar-grid .days {
+        font-size: 18px;
+    }
+    /* 标记日期（23号心形） */
+    .heart-day {
+        position: relative;
+    }
+    .heart-day::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 34px;
+    height: 34px;
+    margin-top: 3px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fa0404' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    z-index: 1;
+    }
+    .heart-day span {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    /* 第十一页整体容器（与前几页风格统一） */
+    .invite-page-11 {
+        width: 100vw;
+        max-width: 320px;
+        height: 100vh;
+        max-height: 250px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb; /* 统一背景色 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 10%;
+    }
+
+    /* 文案区域 */
+    .quote-area {
+        text-align: center;
+    }
+    .quote-area p {
+        font-size: 22px;
+        line-height: 2.2;
+        color: #333;
+        margin: 0;
+        font-family: "KaiTi", "STKaiti", serif; /* 与前几页统一的温柔衬线字体 */
+    }
+    /* 第十二页整体容器（与前几页风格统一） */
+    .invite-page-12 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 550px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 20px 20px;
+        text-align: center;
+    }
+
+    /* 流程列表 */
+    .timeline-list {
+        width: 100%;
+        padding-left: 40px;
+        margin-bottom: 20px;
+    }
+    .timeline-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .icon {
+        width: 60px;
+        display: flex;
+        justify-content: center;
+    }
+    .dot {
+        width: 4px;
+        height: 30px;
+        background: #333;
+        margin: 0 20px;
+    }
+    .text {
+        font-size: 24px;
+        color: #333;
+        font-family: "KaiTi", "STKaiti", serif;
+    }
+
+    /* 日期信息 */
+    .date-info {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .date-info p {
+        font-size: 26px;
+        color: #333;
+        margin: 8px 0;
+        font-family: "KaiTi", "STKaiti", serif;
+    }
+
+    /* 底部英文文案 */
+    .footer-quote {
+        text-align: center;
+        color: #888;
+        font-family: 'Georgia', serif;
+        font-style: italic;
+    }
+    .footer-quote .divider {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .footer-quote p {
+        font-size: 16px;
+        margin: 4px 0;
+    }
+
+    /* 底部爱心 */
+    .bottom-heart {
+        position: absolute;
+        bottom: 30px;
+        font-size: 24px;
+        color: #d48a6a;
+    }
+    /* 第十三页整体容器（与前几页风格统一） */
+    .invite-page-13 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 750px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    /* 上半部分：顶部图片 + 右侧倒计时 */
+    .top-section {
+        width: 100%;
+        height: 45%;
+        display: flex;
+        margin-bottom: 10px;
+    }
+    .photo-top3 {
+        width: 70%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px 0 0 10px;
+    }
+    .countdown-box {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #f0eeeb;
+        border-radius: 0 10px 10px 0;
+    }
+    .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 8px 0;
+    }
+    .countdown-item span:first-child {
+        font-size: 36px;
+        color: #666;
+        font-weight: 300;
+    }
+    .countdown-item .unit {
+        font-size: 18px;
+        color: #888;
+        margin-top: 2px;
+    }
+
+    /* 下半部分：底部图片 */
+    .photo-bottom {
+        width: 100%;
+        height: 55%;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+    }
+    /* 第十四页整体容器（与前几页风格统一） */
+    .invite-page-14 {
+        width: 100vw;
+        max-width: 420px;
+        height: 100vh;
+        max-height: 750px;
+        margin: 0 auto;
+        position: relative;
+        background: #f0eeeb;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 40px 20px;
+    }
+
+    /* 日期文字 */
+    .date-text p {
+        font-size: 24px;
+        color: #333;
+        text-decoration: underline;
+        margin-bottom: 60px;
+        font-family: serif;
+    }
+
+    /* 主文案区域 */
+    .main-text {
+        position: relative;
+        margin-bottom: 80px;
+    }
+    .tips-bg {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 48px;
+        color: #ccc;
+        z-index: 0;
+    }
+    .main-text p {
+        font-size: 48px;
+        color: #000;
+        font-family: "KaiTi", "STKaiti", serif;
+        position: relative;
+        z-index: 1;
+        margin: 0;
+    }
+
+    /* 签名装饰 */
+    .signature {
+        width: 250px;
+        height: 150px;
+        margin-bottom: 60px;
+    }
+
+    /* 地理位置按钮 */
+    .location-btn button {
+        padding: 12px 30px;
+        font-size: 18px;
+        background: #333;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .location-btn button:hover {
+        background: #555;
+    }
+    /* 地理位置按钮容器（给气泡定位用） */
+    .location-btn-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* 气泡提示框 */
+    .location-tooltip {
+      position: absolute;
+      bottom: calc(28% + 12px);
+      left: 75%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #fff5f0, #ffe8e0);
+      color: #b35c3c;
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      box-shadow: 0 3px 10px rgba(179, 92, 60, 0.15);
+      white-space: nowrap;
+      z-index: 999;
+      /* 气泡小箭头 */
+    }
+    .location-tooltip::before {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-right-color: #fff5f0;
+    }
+
+    /* 适配小屏幕，避免气泡超出屏幕 */
+    @media (max-width: 375px) {
+      .location-tooltip {
+        left: auto;
+        right: calc(100% + 12px);
+      }
+      .location-tooltip::before {
+        right: auto;
+        left: 100%;
+        border-right-color: transparent;
+        border-left-color: #fff5f0;
+      }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="wedding-card">
+        <!-- 半透明遮罩 -->
+        <div class="overlay"></div>
+
+        <!-- 左上角装饰文字 -->
+        <div class="corner-deco">
+            <br><br>
+            <span class="flower">✿</span>
+            <div>June</div>
+        </div>
+
+         <!-- 主标题 -->
+        <div class="art-font">
+            陪你度过<br>
+            漫长岁月
+        </div>
+        <!-- 叠加的金色英文 -->
+        <div class="english-text">
+            Forever<br>Happiness
+        </div>
+        
+        <!-- 英文副标题 -->
+        <div class="sub-title">
+            <br><br><br><br>
+            <div class="welcome">Welcome</div>
+            <div class="to-wedding">to our wedding</div>
+        </div>
+
+        <!-- 底部新人信息 -->
+        <div class="couple-info">
+            <div class="names">
+                <div>
+                    <div class="label"></div>
+                    <div>董士程</div>
+                </div>
+                <div class="divider">/</div>
+                <div>
+                    <div class="label"></div>
+                    <div>王鑫欣</div>
+                </div>
+            </div>
+        </div>
+    <!-- 右下角音乐按钮 -->
+    <div id="musicBtn" class="music-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+    </div>
+    <audio id="bgMusic" loop preload="auto">
+        <source src="./images/一生的爱-林俊杰.mp3" type="audio/mpeg">
+    </div>
+    <!-- 第二页：邀请函文案页 -->
+    <div class="invite-page-2">
+        <!-- 背景 -->
+        <div class="bg-layer"></div>
+
+        <!-- 顶部大字母装饰 -->
+        <div class="top-letter">
+            <span>INVITATION</span>
+        </div>
+
+        <!-- 主文案 -->
+        <div class="text-content">
+            <h2 class="title">我们的「婚礼邀请」</h2>
+            <div class="poem">
+                <p>微风掠过夏初的树梢</p>
+                <p>橘子味的晚风、星光、漫山的青</p>
+                <p>漫游在生命的时时刻刻</p>
+                <p>热烈且温柔的日子接踵而至</p>
+                <p>世界的轻盈明亮如期而至</p>
+                <p>六月清透、盛夏满怀</p>
+                <p>在即将到来的崭新时光里</p>
+                <p>期待在蝉鸣渐起的季节</p>
+                <p>和你见一面</p>
+            </div>
+        </div>
+
+        <!-- 底部装饰 -->
+        <div class="footer-decor">
+            <span>FALL IN</span>
+            <span>LOVE</span>
+            <span>WEDDING</span>
+        </div>
+    </div>
+
+
+    <!-- 第三页：胶片风轮播页（上下黑边版） -->
+    <div class="invite-page-3">
+        <!-- 上下黑边胶片框 -->
+        <div class="film-frame">
+            <div class="slideshow">
+                <div class="slide" style="background: url('./images/2.jpg') center center / cover no-repeat;"></div>
+                <div class="slide" style="background: url('./images/3.jpg') center center / cover no-repeat;"></div>
+                <div class="slide" style="background: url('./images/4.jpg') center center / cover no-repeat;"></div>
+                <div class="slide" style="background: url('./images/5.jpg') center center / cover no-repeat;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 第四页：婚礼收尾页 -->
+    <div class="invite-page-4">
+        <!-- 顶部英文感谢语 -->
+        <div class="top-quote">
+            <p>"To Our Family And Friends,</p>
+            <p>Thank You For Celebrating Our Special Day,</p>
+            <p>Supporting Us And Sharing Our Love."</p>
+        </div>
+
+        <!-- 标题 -->
+        <div class="title-block">
+            <p class="subtitle">我们，结婚啦</p>
+        </div>
+
+        <!-- 三列照片区 -->
+        <div class="photo-row">
+            <div class="photo-col photo-left" style="background: url('./images/6.jpg') center center / cover no-repeat;"></div>
+            <div class="photo-col photo-center" style="background: url('./images/7.jpg') center center / cover no-repeat;"></div>
+            <div class="photo-col photo-right" style="background: url('./images/8.jpg') center center / cover no-repeat;"></div>
+        </div>
+
+    </div>
+
+    <!-- 第五页：婚礼邀约页 -->
+    <div class="invite-page-5">
+        <!-- 顶部邀约文案 -->
+        <div class="top-invite">
+            <p>阳光漫过无边花海</p>
+            <p>我们在天地间相拥自由</p>
+            <p>诚邀您共同见证</p>
+            <p>属于我们的浪漫奔赴</p>
+        </div>
+
+        <!-- 主标题区 -->
+        <div class="main-title-area">
+            <p class="main-line-1">追着风的方向</p>
+            <div class="sub-title-group">
+                <p class="en-line">To be<br>A better man</p>
+                <p class="main-line-2">奔向你</p>
+            </div>
+        </div>
+
+        <!-- 底部卡片 -->
+        <div class="invite-card">
+            <div class="card-photo" style="background: url('./images/9.jpg') center center / cover no-repeat;"></div>
+            <div class="card-text">
+                <p class="cn-text">你是偏爱<br>是例外，是首选，是唯一</p>
+                <p class="en-text">You are the preference<br>the exception, the first choice and the only .</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第六页：双图+文案收尾页 -->
+    <div class="invite-page-6">
+        <!-- 双图拼接区 -->
+        <div class="double-photo-area">
+            <div class="photo-top" style="background: url('./images/10.jpg') center center / cover no-repeat;"></div>
+            <div class="photo-bottom">
+                <div class="photo-bg" style="background: url('./images/11.jpg') center center / cover no-repeat;"></div>
+                <div class="photo-words">
+                    <span>FALL IN</span>
+                    <span>LOVE</span>
+                    <span>WEDDING</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部文案区 -->
+        <div class="quote-area">
+            <p>“你是世间的一抹明媚</p>
+            <p>他人困于山中晨雾，我困于你”</p>
+        </div>
+    </div>
+
+    <!-- 第七页：错位双图 + 温柔文案 -->
+    <div class="invite-page-7">
+        <!-- 错位双图区 -->
+        <div class="photo-area1">
+            <div class="photo-left1" style="background: url('./images/12.jpg') center center / cover no-repeat;"></div>
+            <div class="photo-right1" style="background: url('./images/13.jpg') center center / cover no-repeat;"></div>
+        </div>
+
+        <!-- 底部文案区 -->
+        <div class="text-area">
+            <p class="divider">/</p>
+            <p class="cn-line">朝阳吻过金山</p>
+            <p class="cn-line">霞光漫过肩头</p>
+            <p class="cn-line highlight">我依偎你</p>
+            <p class="en-line">You are everything to me<br>and I was so blessed when god sent you here for me .</p>
+        </div>
+    </div>
+
+   <!-- 第八页：全屏图+底部文案（图片完整显示版） -->
+    <div class="invite-page-8">
+        <!-- 顶部图片区（完整显示） -->
+        <div class="full-photo-area">
+            <div class="photo-main" style="background: url('./images/14.jpg') center center / contain no-repeat;"></div>
+        </div>
+
+        <!-- 底部文案区 -->
+        <div class="text-area">
+            <div class="cn-text">
+                <p class="line1">山野千里</p>
+                <p class="line2">你是我藏在星星里的浪漫</p>
+            </div>
+            <p class="en-text">Love is the<br>beauty of the soul</p>
+        </div>
+    </div>
+
+    
+    <!-- 第九页：樱花主题三图错位页 -->
+    <div class="invite-page-9">
+        <!-- 左侧竖排名字 -->
+        <div class="names-vertical">
+            <p>董士程 & 王鑫欣</p>
+        </div>
+
+        <!-- 顶部大图 -->
+        <div class="photo-top2" style="background: url('./images/15.jpg') center center / cover no-repeat;"></div>
+
+                 <!-- 底部错位双图区 -->
+        <div class="photo-bottom2">
+            <div class="photo-left2" style="background: url('./images/16.jpg') center center / cover no-repeat;"></div>
+            <div class="photo-right2" style="background: url('./images/17.jpg') center center / cover no-repeat;"></div>
+        </div>
+         
+        <!-- 底部文案区 -->
+        <div class="text-area">
+            <div class="cn-text">
+                <p class="line1">总有一场相遇是互相喜欢</p>
+                <p class="line2">互相欣赏，共同成长</p>
+            </div>            
+        </div>
+    </div>
+
+    <!-- 第十页：婚礼日期日历页 -->
+    <div class="invite-page-10">
+        <!-- 顶部标题 -->
+        <div class="header-title">
+            <span class="heart">♥</span>
+            <h1>SAVE THE DATE</h1>
+        </div>
+
+        <!-- 弧形英文文字 + 椭圆背景图 -->
+        <div class="calendar-wrapper">
+            <!-- 弧形英文 -->
+            <div class="arc-text">
+                YOU ARE THE LOVE OF MY LIFE
+            </div>
+
+            <!-- 椭圆图片容器 -->
+            <div class="calendar-oval">
+                <div class="bg-image" style="background: url('./images/18.jpg') center center / cover no-repeat;"></div>
+                <!-- 日历层 -->
+                <div class="calendar-overlay">
+                    <div class="date-header">
+                        <span class="day">06 / 23</span>
+                         
+                        <span class="year">-2026-</span>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="weekdays">
+                            <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+                        </div>
+                        <div class="days">
+                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                            <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span>
+                            <span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span class="heart-day">23</span><span>24</span>
+                            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第十二页：婚礼流程时间页 -->
+    <div class="invite-page-12">
+        <!-- 婚礼流程列表 -->
+        <div class="timeline-list">
+            
+            
+            <div class="timeline-item">
+                <div class="icon">
+                    <svg width="40" height="30" viewBox="0 0 40 30" fill="none" stroke="#666" stroke-width="1.2">
+                        <ellipse cx="10" cy="20" rx="8" ry="6"/>
+                        <ellipse cx="30" cy="20" rx="8" ry="6"/>
+                        <path d="M10 14c0-3 3-6 10-6s10 3 10 6"/>
+                        <circle cx="20" cy="10" r="2"/>
+                    </svg>
+                </div>
+                <div class="dot"></div>
+                <div class="text">11:18 婚礼仪式</div>
+            </div>
+            <div class="timeline-item">
+                <div class="icon">
+                    <svg width="40" height="50" viewBox="0 0 40 50" fill="none" stroke="#666" stroke-width="1.2">
+                        <path d="M10 15v25c0 2 2 4 4 4h4c2 0 4-2 4-4V15H10z"/>
+                        <path d="M22 15v25c0 2 2 4 4 4h4c2 0 4-2 4-4V15H22z"/>
+                        <path d="M12 15h10"/>
+                        <path d="M24 15h10"/>
+                    </svg>
+                </div>
+                <div class="dot"></div>
+                <div class="text">12:08 婚礼午宴</div>
+            </div>
+        </div>
+
+        <!-- 日期信息 -->
+        <div class="date-info">
+            <p>2026年6月23日 星期二</p>
+            <p>农历五月初九 11:18</p>
+        </div>
+
+        <!-- 底部英文文案 -->
+        <div class="footer-quote">
+            <p class="divider">/</p>
+            <p>I love three things in this world.</p>
+            <p>Sun, moon and you.</p>
+            <p>Sun for morning, moon for night, and you forever.</p>
+        </div>
+
+        <!-- 底部爱心 -->
+        <div class="bottom-heart">♥</div>
+    </div>
+
+    <!-- 第十三页：倒计时+双图页 -->
+    <div class="invite-page-13">
+        <!-- 上半部分：顶部图片 + 右侧倒计时 -->
+        <div class="top-section">
+            <div class="photo-top3" style="background: url('./images/19.jpg') center center / cover no-repeat;"></div>
+            <div class="countdown-box">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <span class="unit">天</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <span class="unit">时</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <span class="unit">分</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <span class="unit">秒</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下半部分：底部图片 -->
+        <div class="photo-bottom" style="background: url('./images/20.jpg') center center / cover no-repeat;"></div>
+    </div>
+
+    <!-- 第十四页：婚礼收尾+定位页 -->
+    <div class="invite-page-14">
+        <!-- 日期 -->
+        <div class="date-text">
+            <p>2026.06.23</p>
+        </div>
+
+        <!-- 主文案 -->
+        <div class="main-text">
+            <span class="tips-bg">TIPS</span>
+            <p>婚礼见！</p>
+        </div>
+
+        <!-- 签名装饰 -->
+        <div class="signature">
+            <svg viewBox="0 0 250 150" fill="none" stroke="#000" stroke-width="1.5">
+                <path d="M50 120 Q70 60 100 80 Q130 100 160 60 Q190 20 210 50" />
+                <path d="M100 80 Q120 40 140 60" />
+                <path d="M160 60 Q180 40 200 70" />
+                <path d="M210 50 Q220 55 230 50" />
+                <path d="M120 100 Q130 110 140 100" />
+                <path d="M140 100 Q150 110 160 100" />
+                <path d="M160 100 Q170 110 180 100" />
+                <path d="M180 100 Q190 110 200 100" />
+                <path d="M70 50 L75 40 L80 50" />
+                <path d="M100 60 L105 50 L110 60" />
+                <path d="M150 40 L155 30 L160 40" />
+                <path d="M180 70 L185 60 L190 70" />
+                <path d="M200 90 L205 80 L210 90" />
+                <path d="M100 120 Q110 130 120 120 L150 120 Q170 130 180 110" />
+                <path d="M160 110 Q170 100 180 110" />
+                <path d="M180 110 Q190 120 200 110" />
+                <path d="M190 115 Q200 125 210 115" />
+            </svg>
+        </div>
+
+        <!-- 地理位置按钮 -->
+        <div class="location-btn">
+            <button onclick="openLocation()">📍 禧悦庄园·长乐厅</button>
+        </div>
+        <br>济南市历城区华龙路与华信路交叉口西南320米<br>
+        <!-- 气泡提示 -->
+        <div class="location-tooltip">
+            点击查看具体位置，免费停车
+        </div>
+
+    <script>
+        const weddingAddress = {
+        name: "禧悦庄园·长乐厅",
+        address: "济南市历城区华龙路与华信路交叉口西南320米",
+        latitude: 36.68, // 替换为酒店纬度
+        longitude: 117.08// 替换为酒店经度
+    };
+
+    // 微信环境跳转地图逻辑
+    function openLocation() {
+        // 微信浏览器内置地图跳转
+        if (navigator.userAgent.toLowerCase().includes('micromessenger')) {
+            // 使用微信JS-SDK或直接调用内置地图链接
+            // 方式1：使用location.href跳转微信地图
+            const mapUrl = `https://apis.map.qq.com/uri/v1/marker?marker=coord:${weddingAddress.latitude},${weddingAddress.longitude};title:${encodeURIComponent(weddingAddress.name)};addr:${encodeURIComponent(weddingAddress.address)}&referer=婚礼邀请函`;
+            window.location.href = mapUrl;
+        } else {
+            // 非微信环境，提示复制地址
+            alert(`婚礼地址：${weddingAddress.name}\n${weddingAddress.address}\n请在微信中打开邀请函查看地图导航`);
+        }
+    }
+    </script>
+
+    <script>
+        // 适配微信端，禁止缩放和下拉
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+
+        const audio = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicBtn');
+
+        // 微信强制规则：必须用户任意点击页面一次才能出声
+        document.body.addEventListener('click', function initAudio(){
+            audio.play();
+            musicBtn.classList.add('playing');
+            document.body.removeEventListener('click', initAudio);
+        })
+
+        // 按钮切换播放暂停
+        musicBtn.onclick = function(e){
+            e.stopPropagation();
+            if(audio.paused){
+                audio.play();
+                musicBtn.classList.add('playing');
+            }else{
+                audio.pause();
+                musicBtn.classList.remove('playing');
+            }
+        }
+
+        // 自动轮播逻辑
+      document.addEventListener('DOMContentLoaded', function(){
+      const slideshow = document.querySelector('.slideshow');
+      const slides = document.querySelectorAll('.slide');
+      let current = 0;
+      const total = slides.length;
+
+      function playSlide() {
+        current++;
+        // 播到最后一张时，平滑切回第一张
+        if (current >= total) {
+          current = 0;
+        }
+        slideshow.style.transform = `translateX(-${current * 100}%)`;
+      }
+
+      // 3秒切换一次，可自己改时间
+      setInterval(playSlide, 2600);
+    });
+      // 倒计时逻辑：目标日期为2026-06-23
+    function updateCountdown() {
+        const targetDate = new Date('2026-06-23T00:00:00').getTime();
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+            document.getElementById('days').innerText = '00';
+            document.getElementById('hours').innerText = '00';
+            document.getElementById('minutes').innerText = '00';
+            document.getElementById('seconds').innerText = '00';
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerText = String(days).padStart(2, '0');
+        document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+        document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+    }
+
+    // 每秒更新一次
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    </script>
+    <script>
+    // 自动向下滚动
+    let scrollSpeed = 1.6; // 数值越大滚越快，按需微调
+    function autoScroll() {
+        window.scrollBy(0, scrollSpeed);
+    }
+    let scrollTimer = setInterval(autoScroll, 30);
+
+    // 鼠标/触屏暂停，离开继续
+    document.addEventListener('touchstart',()=>{
+        clearInterval(scrollTimer);
+    })
+    document.addEventListener('touchend',()=>{
+        scrollTimer = setInterval(autoScroll, 30);
+    })
+    document.addEventListener('mousedown',()=>{
+        clearInterval(scrollTimer);
+    })
+    document.addEventListener('mouseup',()=>{
+        scrollTimer = setInterval(autoScroll, 30);
+    })
+</script>
+</body>
+</html>
