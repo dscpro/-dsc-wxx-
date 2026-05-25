@@ -1764,15 +1764,13 @@
         // document.addEventListener('touchmove', function(e) {
         //     e.preventDefault();
         // }, { passive: false });
-        // 引导遮罩逻辑：触摸/滑动即可关闭
         const mask = document.getElementById('guideMask');
         function closeMask() {
           mask.classList.add('hide');
         }
-        // 监听触摸、滑动、点击，任意操作都关闭遮罩
-        document.addEventListener('touchstart', closeMask, {once: true, passive: true});
-        document.addEventListener('scroll', closeMask, {once: true, passive: true});
-        document.addEventListener('click', closeMask, {once: true});
+        
+        // 仅监听点击事件，移除滚动、触摸自动关闭逻辑
+        mask.addEventListener('click', closeMask);
         
         const audio = document.getElementById('bgMusic');
         const musicBtn = document.getElementById('musicBtn');
@@ -1847,7 +1845,7 @@
     <script>
     // 配置项，可根据需要调整
     const config = {
-      scrollSpeed: 0.8,      // 自动滚动速度，0.4~1.2之间最合适
+      scrollSpeed: 1.2,      // 自动滚动速度，0.4~1.2之间最合适
       resumeDelay: 1500     // 松手后多久恢复自动滚动（毫秒）
     };
     
