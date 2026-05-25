@@ -1268,11 +1268,17 @@
       }
     }
    html, body {
+      margin: 0;
+      padding: 0;
+      /* 关键：让页面高度自适应，允许自然滚动 */
       height: auto;
       min-height: 100%;
+      /* 只禁止横向滚动，保留纵向 */
       overflow-x: hidden;
       overflow-y: auto;
+      /* 开启微信的惯性滚动，让拖动更丝滑 */
       -webkit-overflow-scrolling: touch;
+      /* 仅允许纵向滑动手势 */
       touch-action: pan-y;
     }
     </style>
@@ -1778,26 +1784,71 @@
     setInterval(updateCountdown, 1000);
     </script>
     <script>
-    // 自动向下滚动
-    let scrollSpeed = 1.6; // 数值越大滚越快，按需微调
-    function autoScroll() {
-        window.scrollBy(0, scrollSpeed);
+    // 配置项，可根据需要调整
+    const config = {
+      scrollSpeed: 0.8,      // 自动滚动速度，0.4~1.2之间最合适
+      resumeDelay: 1500     // 松手后多久恢复自动滚动（毫秒）
+    };
+    
+    let scrollTimer = null;
+    let isDragging = false;
+    let touchStartY = 0;
+    
+    // 启动自动滚动
+    function startAutoScroll() {
+      if (scrollTimer) return;
+      scrollTimer = setInterval(() => {
+        if (!isDragging) {
+          window.scrollBy(0, config.scrollSpeed);
+        }
+      }, 30);
     }
-    let scrollTimer = setInterval(autoScroll, 30);
-
-    // 鼠标/触屏暂停，离开继续
-    document.addEventListener('touchstart',()=>{
+    
+    // 停止自动滚动
+    function stopAutoScroll() {
+      if (scrollTimer) {
         clearInterval(scrollTimer);
-    })
-    document.addEventListener('touchend',()=>{
-        scrollTimer = setInterval(autoScroll, 30);
-    })
-    document.addEventListener('mousedown',()=>{
-        clearInterval(scrollTimer);
-    })
-    document.addEventListener('mouseup',()=>{
-        scrollTimer = setInterval(autoScroll, 30);
-    })
+        scrollTimer = null;
+      }
+    }
+    
+    // 页面加载完成后启动自动滚动
+    window.addEventListener('load', startAutoScroll);
+    
+    // 触摸开始：标记为拖动状态，记录起始位置
+    document.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    // 触摸移动：保持拖动状态，不拦截事件（关键！）
+    document.addEventListener('touchmove', (e) => {
+      // 不阻止默认行为，让浏览器正常处理拖动
+    }, { passive: true });
+    
+    // 触摸结束：延迟恢复自动滚动
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+      setTimeout(startAutoScroll, config.resumeDelay);
+    }, { passive: true });
+    
+    // 鼠标事件兼容（电脑预览用）
+    document.addEventListener('mousedown', () => {
+      isDragging = true;
+    });
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      setTimeout(startAutoScroll, config.resumeDelay);
+    });
+    
+    // 页面切换到后台时停止定时器，节省资源
+    window.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoScroll();
+      } else {
+        startAutoScroll();
+      }
+    });
 </script>
 </body>
 </html>
