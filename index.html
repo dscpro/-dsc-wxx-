@@ -1347,7 +1347,7 @@
 <body>
     <!-- 首页遮罩层 -->
     <div class="guide-mask" id="guideMask">
-      <p class="guide-text">向下滑动，共赴浪漫美好</p>
+      <p class="guide-text">点击开始，共赴浪漫美好</p>
       <div class="arrow"></div>
     </div>
     <div class="wedding-card">
@@ -1782,12 +1782,12 @@
         const musicBtn = document.getElementById('musicBtn');
 
         // 微信强制规则：必须用户任意点击页面一次才能出声
-        document.body.addEventListener('click', function initAudio(){
-            audio.play();
-            musicBtn.classList.add('playing');
-            document.body.removeEventListener('click', initAudio);
-        })
-
+        // document.body.addEventListener('click', function initAudio(){
+            
+        //     musicBtn.classList.add('playing');
+        //     document.body.removeEventListener('click', initAudio);
+        // })
+        audio.play();
         // 按钮切换播放暂停
         musicBtn.onclick = function(e){
             e.stopPropagation();
@@ -1917,63 +1917,63 @@
 </script>
 <script>
     // 滚动配置
-const config = {
-  scrollSpeed: 0.6,
-  resumeDelay: 1500
-};
-let scrollTimer = null;
-let isDragging = false;
-
-// 自动滚动逻辑
-function autoScroll() {
-  if (!isDragging) {
-    window.scrollBy(0, config.scrollSpeed);
-  }
-}
-
-function startAutoScroll() {
-  if (!scrollTimer) {
-    scrollTimer = setInterval(autoScroll, 30);
-  }
-}
-
-// 触摸拖动监听
-document.addEventListener('touchstart', () => {
-  isDragging = true;
-}, { passive: true });
-
-document.addEventListener('touchend', () => {
-  isDragging = false;
-  setTimeout(startAutoScroll, config.resumeDelay);
-}, { passive: true });
-
-// 鼠标兼容
-document.addEventListener('mousedown', () => {
-  isDragging = true;
-});
-document.addEventListener('mouseup', () => {
-  isDragging = false;
-  setTimeout(startAutoScroll, config.resumeDelay);
-});
-
-// 页面切后台暂停滚动
-window.addEventListener('visibilitychange', () => {
-  if (document.hidden) {
-    if (scrollTimer) {
-      clearInterval(scrollTimer);
-      scrollTimer = null;
+    const config = {
+      scrollSpeed: 0.6,
+      resumeDelay: 1500
+    };
+    let scrollTimer = null;
+    let isDragging = false;
+    
+    // 自动滚动逻辑
+    function autoScroll() {
+      if (!isDragging) {
+        window.scrollBy(0, config.scrollSpeed);
+      }
     }
-  } else {
-    if (!isDragging) startAutoScroll();
-  }
-});
-
-// 遮罩点击：消失 + 启动自动滚动
-const mask = document.getElementById('guideMask');
-mask.addEventListener('click', function () {
-  this.classList.add('hide');
-  startAutoScroll();
-});
+    
+    function startAutoScroll() {
+      if (!scrollTimer) {
+        scrollTimer = setInterval(autoScroll, 30);
+      }
+    }
+    
+    // 触摸拖动监听
+    document.addEventListener('touchstart', () => {
+      isDragging = true;
+    }, { passive: true });
+    
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+      setTimeout(startAutoScroll, config.resumeDelay);
+    }, { passive: true });
+    
+    // 鼠标兼容
+    document.addEventListener('mousedown', () => {
+      isDragging = true;
+    });
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      setTimeout(startAutoScroll, config.resumeDelay);
+    });
+    
+    // 页面切后台暂停滚动
+    window.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (scrollTimer) {
+          clearInterval(scrollTimer);
+          scrollTimer = null;
+        }
+      } else {
+        if (!isDragging) startAutoScroll();
+      }
+    });
+    
+    // 遮罩点击：消失 + 启动自动滚动
+    const mask = document.getElementById('guideMask');
+    mask.addEventListener('click', function () {
+      this.classList.add('hide');
+      startAutoScroll();
+    });
 </script>
 </body>
 </html>
