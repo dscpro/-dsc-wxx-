@@ -1281,10 +1281,62 @@
       /* 仅允许纵向滑动手势 */
       touch-action: pan-y;
     }
+        /* 全屏引导遮罩 */
+    .guide-mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 9999; /* 最高层级，覆盖所有内容 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-family: "微软雅黑", sans-serif;
+    }
+    
+    /* 引导文字 */
+    .guide-text {
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+    }
+    
+    /* 下滑箭头动画 */
+    .arrow {
+      width: 30px;
+      height: 30px;
+      border-right: 2px solid #ffffff;
+      border-bottom: 2px solid #ffffff;
+      transform: rotate(45deg);
+      animation: arrowMove 1.5s infinite ease-in-out;
+    }
+    
+    /* 箭头上下浮动动画 */
+    @keyframes arrowMove {
+      0% { transform: rotate(45deg) translateY(0); opacity: 0.6; }
+      50% { transform: rotate(45deg) translateY(12px); opacity: 1; }
+      100% { transform: rotate(45deg) translateY(0); opacity: 0.6; }
+    }
+    
+    /* 遮罩隐藏 */
+    .guide-mask.hide {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.6s ease;
+    }
     </style>
 </head>
 <body>
-
+<!-- 下滑引导遮罩 -->
+<div class="guide-mask" id="guideMask">
+  <p class="guide-text">向下滑动，共赴浪漫美好</p>
+  <div class="arrow"></div>
+</div>
     <div class="wedding-card">
         <!-- 半透明遮罩 -->
         <div class="overlay"></div>
@@ -1708,11 +1760,20 @@
     </script>
 
     <script>
-        // 适配微信端，禁止缩放和下拉
-        document.addEventListener('touchmove', function(e) {
-            e.preventDefault();
-        }, { passive: false });
-
+        // // 适配微信端，禁止缩放和下拉
+        // document.addEventListener('touchmove', function(e) {
+        //     e.preventDefault();
+        // }, { passive: false });
+        // 引导遮罩逻辑：触摸/滑动即可关闭
+        const mask = document.getElementById('guideMask');
+        function closeMask() {
+          mask.classList.add('hide');
+        }
+        // 监听触摸、滑动、点击，任意操作都关闭遮罩
+        document.addEventListener('touchstart', closeMask, {once: true, passive: true});
+        document.addEventListener('scroll', closeMask, {once: true, passive: true});
+        document.addEventListener('click', closeMask, {once: true});
+        
         const audio = document.getElementById('bgMusic');
         const musicBtn = document.getElementById('musicBtn');
 
